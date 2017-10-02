@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.cfg
+setup.py
+app/__init__.py
+app/app.py
+app/views.py
+app/templates/form.html
+app/templates/layout.html
+danifier.egg-info/PKG-INFO
+danifier.egg-info/SOURCES.txt
+danifier.egg-info/dependency_links.txt
+danifier.egg-info/requires.txt
+danifier.egg-info/top_level.txt
