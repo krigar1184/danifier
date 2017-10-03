@@ -3,9 +3,13 @@ setup.cfg
 setup.py
 app/__init__.py
 app/app.py
+app/core.py
+app/forms.py
 app/views.py
+app/templates/.result.html.swp
 app/templates/form.html
 app/templates/layout.html
+app/templates/result.html
 danifier.egg-info/PKG-INFO
 danifier.egg-info/SOURCES.txt
 danifier.egg-info/dependency_links.txt
