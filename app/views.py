@@ -6,10 +6,10 @@ from app.core import danify
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    form = DanifyForm(request.data)
-    form.validate_on_submit()
+    form = DanifyForm()
 
     if request.method == 'POST':
-        return render_template('result.html', result=danify(form.text))
+        form.validate_on_submit()
+        return render_template('result.html', result=danify(form.text.data))
 
     return render_template('form.html', form=form)

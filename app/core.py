@@ -2,9 +2,11 @@ import re
 
 
 def danify(text):
-    return text
+    return ' '.join(words(text))
 
 
 def words(text):
-    words = text.split(' ')
-    return words
+    return filter(
+        bool,
+        [word.strip() for word in text.replace('\n', ' ').split()]
+    )
