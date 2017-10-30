@@ -2,7 +2,7 @@ import re
 
 
 def danify(text):
-    return text
+    return ' '.join(words(text))
 
 
 def words(text):
@@ -11,4 +11,7 @@ def words(text):
 
 
 def apply_rule(rule):
-    return
+    return filter(
+        bool,
+        [word.strip() for word in text.replace('\n', ' ').split()]
+    )

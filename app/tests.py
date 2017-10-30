@@ -15,8 +15,9 @@ def test_danify(input_data, expected):
 
 @pytest.mark.parametrize(('input_data', 'expected'), [
     ('three words here', ['three', 'words', 'here']),
-    ('text, with, commas', ['text', 'with', 'commas']),
-    ('    text-with  -spaces    ', ['text-with', 'spaces'])
+    ('text, with, commas', ['text,', 'with,', 'commas']),
+    ('    text-with  spaces    ', ['text-with', 'spaces']),
+    (' text \nwith  \nnewlines', ['text', 'with', 'newlines']),
 ])
 def test_words(input_data, expected):
-    assert words(input_data) == expected
+    assert list(words(input_data)) == expected
