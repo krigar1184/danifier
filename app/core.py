@@ -8,3 +8,7 @@ def danify(text):
 def words(text):
     words = text.split(' ')
     return words
+
+
+def apply_rule(rule):
+    return
