@@ -4,6 +4,13 @@ python:
     - nightly
 install: pip install -r requirements.txt
 env:
+    global:
+        - CC_TEST_REPORTER_ID=9d3af98f8a8a694d10c17a25fcf2a69419758fdc729c8fd4aa1c8987b667f2a2
     - FLASK_APP=app/app.py
+before_script:
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
 script: python setup.py test
-
+after_script:
+    - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
